@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f5;
+  --bg-tertiary: #ececea;
+  --bg-accent: #e4e4e1;
+  --bg-deep: #0a0a0a;
+
+  --text-hero: #0a0a0a;
+  --text-body: #4a4a4a;
+  --text-eyebrow: #6b6b6b;
+  --text-muted: #8a8a8a;
+  --text-on-deep: #ffffff;
+
+  --hairline: rgba(10, 10, 10, 0.10);
+  --hairline-strong: rgba(10, 10, 10, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-primary);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-body);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--text-hero);
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.font-display {
+  font-family: "Fraunces", Georgia, serif;
+}
+.font-body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-eyebrow);
+}
+
+.hairline {
+  border-color: var(--hairline);
+}
+
+.section-pad {
+  padding-block: clamp(80px, 12vw, 160px);
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+
+/* Grid pattern background for motion-bg sections */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(10,10,10,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10,10,10,0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+::selection {
+  background: #0a0a0a;
+  color: #ffffff;
+}

@@ -1,0 +1,8 @@
+{
+  "frameCount": 576,
+  "frameDir": "/frames",
+  "pattern": "/frames/frame-{n}.jpg",
+  "padLength": 4,
+  "fps": 24,
+  "width": 1920
+}
