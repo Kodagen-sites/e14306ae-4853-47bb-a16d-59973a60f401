@@ -71,9 +71,6 @@ export default async function ServiceDetail({ params }: { params: Params }) {
               src={svc.imageUrl}
               alt={svc.name}
               className="absolute inset-0 h-full w-full object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.opacity = "0";
-              }}
             />
           </div>
         </section>

@@ -42,9 +42,6 @@ export default function ContactPage() {
                 src="/section-gallery-2.jpg"
                 alt="Modern Vancouver condominium interior with mountain view"
                 className="absolute inset-0 h-full w-full object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.opacity = "0";
-                }}
               />
               <div className="absolute inset-0 bg-ink/15" />
               <div className="absolute bottom-8 left-8 right-8 md:bottom-10 md:left-10 md:right-10 text-canvas">
