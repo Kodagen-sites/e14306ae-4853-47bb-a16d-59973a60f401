@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/sections/PageHero";
 import ContactForm from "@/components/sections/ContactForm";
 import { siteConfig } from "@/lib/site-config";
 
@@ -15,23 +16,18 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="pt-32 md:pt-40">
-        <section className="section-pad bg-canvas">
-          <div className="max-w-[1280px] mx-auto">
-            <div className="eyebrow mb-6">
-              <span className="inline-block h-px w-10 align-middle bg-ink/30 mr-3" />
-              Contact
-            </div>
-            <h1 className="font-display text-ink text-[clamp(40px,7vw,96px)] leading-[1.0] tracking-tight font-light max-w-[18ch]">
+      <main>
+        <PageHero
+          eyebrow="Contact"
+          image="/section-process.jpg"
+          title={
+            <>
               Tell us about{" "}
               <span className="font-medium italic">the building.</span>
-            </h1>
-            <p className="text-ink-body text-lg leading-relaxed max-w-[640px] mt-10">
-              Send a short note about your project — scope, timeline, location.
-              A principal will reply within one business day.
-            </p>
-          </div>
-        </section>
+            </>
+          }
+          intro="Send a short note about your project — scope, timeline, location. A principal will reply within one business day."
+        />
 
         {/* CT4 — Split photo + form */}
         <section className="bg-canvas-tint border-t border-ink/5">

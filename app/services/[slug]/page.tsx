@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/sections/PageHero";
 import { siteConfig } from "@/lib/site-config";
 
 type Params = Promise<{ slug: string }>;
@@ -37,7 +38,15 @@ export default async function ServiceDetail({ params }: { params: Params }) {
   return (
     <>
       <Header />
-      <main className="pt-32 md:pt-40">
+      <main>
+        <PageHero
+          eyebrow={`Service · ${String(idx + 1).padStart(2, "0")} of ${siteConfig.services.length}`}
+          image={svc.imageUrl}
+          title={<>{svc.name}.</>}
+          intro={svc.description}
+        />
+
+        {/* Body content */}
         <section className="section-pad bg-canvas">
           <div className="max-w-[1280px] mx-auto">
             <Link
@@ -47,37 +56,6 @@ export default async function ServiceDetail({ params }: { params: Params }) {
               <span aria-hidden>←</span>
               All Services
             </Link>
-
-            <div className="eyebrow mb-6">
-              <span className="inline-block h-px w-10 align-middle bg-ink/30 mr-3" />
-              Service · {String(idx + 1).padStart(2, "0")} of{" "}
-              {siteConfig.services.length}
-            </div>
-
-            <h1 className="font-display text-ink text-[clamp(40px,7vw,96px)] leading-[1.0] tracking-tight font-light max-w-[15ch]">
-              {svc.name}.
-            </h1>
-
-            <p className="text-ink-body text-lg md:text-xl leading-relaxed max-w-[680px] mt-10">
-              {svc.description}
-            </p>
-          </div>
-        </section>
-
-        {/* Hero image */}
-        <section className="bg-canvas-tint">
-          <div className="relative h-[60vh] md:h-[80vh] overflow-hidden">
-            <img
-              src={svc.imageUrl}
-              alt={svc.name}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        </section>
-
-        {/* Body content */}
-        <section className="section-pad bg-canvas">
-          <div className="max-w-[1280px] mx-auto">
             <div className="grid grid-cols-12 gap-x-6 gap-y-12">
               <div className="col-span-12 md:col-span-4">
                 <div className="eyebrow mb-4">

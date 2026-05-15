@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .section-pad {
-  padding-block: clamp(80px, 12vw, 160px);
+  padding-block: clamp(48px, 6vw, 96px);
   padding-inline: clamp(20px, 5vw, 64px);
 }
 

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/sections/PageHero";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -15,24 +16,18 @@ export default function ServicesIndex() {
   return (
     <>
       <Header />
-      <main className="pt-32 md:pt-40">
-        <section className="section-pad bg-canvas">
-          <div className="max-w-[1280px] mx-auto">
-            <div className="eyebrow mb-6">
-              <span className="inline-block h-px w-10 align-middle bg-ink/30 mr-3" />
-              Services
-            </div>
-            <h1 className="font-display text-ink text-[clamp(40px,7vw,96px)] leading-[1.0] tracking-tight font-light max-w-[18ch]">
+      <main>
+        <PageHero
+          eyebrow="Services"
+          image="/section-gallery-3.jpg"
+          title={
+            <>
               Five disciplines.{" "}
               <span className="font-medium italic">One accountable team.</span>
-            </h1>
-            <p className="text-ink-body text-lg leading-relaxed max-w-[640px] mt-10">
-              Apex Build Co. delivers each discipline below in-house or with
-              long-standing trade partners. Every project is led by a single
-              principal-in-charge — your one phone call from sketch to keys.
-            </p>
-          </div>
-        </section>
+            </>
+          }
+          intro="Apex Build Co. delivers each discipline below in-house or with long-standing trade partners. Every project is led by a single principal-in-charge — your one phone call from sketch to keys."
+        />
 
         <section className="bg-canvas-tint border-t border-ink/5">
           <div className="max-w-[1280px] mx-auto">
